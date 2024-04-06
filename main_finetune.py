@@ -15,10 +15,10 @@ if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
 
     arg_parser.add_argument(
-        "--yield_dpath", type=str, default="./data/reaction_yield_prediction/"
+        "--yield_dpath", type=str, default="/kaggle/working/sample/data/reaction_yield_prediction/"
     )
     arg_parser.add_argument(
-        "--yield_graph_save_path", type=str, default="./data/reaction_yield_prediction/"
+        "--yield_graph_save_path", type=str, default="/kaggle/working/sample/data/reaction_yield_prediction/"
     )
 
     # data_id -> #data_id 1: Buchwald-Hartwig, #data_id 2: Suzuki-Miyaura, %data_id 3: out-of-sample test splits for Buchwald-Hartwig
@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
             get_graph_data(rsmi_list, yld_list, filename)
 
-    if not os.path.exists("./model/finetuned/"):
-        os.makedirs("./model/finetuned/")
+    if not os.path.exists("/kaggle/working/sample/model/finetuned/"):
+        os.makedirs("/kaggle/working/sample/model/finetuned/")
 
     finetune(args)

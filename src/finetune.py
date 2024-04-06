@@ -29,7 +29,7 @@ def finetune(args):
 
     batch_size = 128
     use_saved = False
-    model_path = "./model/finetuned/model_%d_%d_%d_%d.pt" % (
+    model_path = "/kaggle/working/sample/model/finetuned/model_%d_%d_%d_%d.pt" % (
         args.data_id,
         args.split_id,
         train_size,
@@ -75,7 +75,7 @@ def finetune(args):
     node_dim = data.rmol_node_attr[0].shape[1]
     edge_dim = data.rmol_edge_attr[0].shape[1]
 
-    pretrained_model_path = "./model/pretrained/" + "%d_pretrained_gnn.pt" % (args.seed)
+    pretrained_model_path = "/kaggle/working/sample/model/pretrained/" + "%d_pretrained_gnn.pt" % (args.seed)
 
     net = reactionMPNN(node_dim, edge_dim, pretrained_model_path).cuda()
 
